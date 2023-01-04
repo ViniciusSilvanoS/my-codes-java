@@ -1,0 +1,8 @@
+package oo.composicao_teste2.meu.desafio;
+
+public class Produto {
+
+	private String nome;
+	private double preco;
+	
+}

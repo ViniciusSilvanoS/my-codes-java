@@ -1,0 +1,1 @@
+a tipo de variável (var) reconhece o valor que está sendo atribuido e cria de acordo com o dado que está sendo inserido.

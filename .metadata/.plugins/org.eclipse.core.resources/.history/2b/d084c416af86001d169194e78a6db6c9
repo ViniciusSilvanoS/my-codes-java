@@ -1,0 +1,23 @@
+package oo.composicao_teste2.professor.muitos_pra_muitos;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		
+		Set<Integer> num = new HashSet<>();
+		
+		num.add(1);
+		num.add(10);
+		num.add(5);
+		
+		for() {
+			
+		}
+		
+		
+	}
+	
+}

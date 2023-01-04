@@ -1,0 +1,10 @@
+package exercicios.lista2.Eiii7;
+
+public class PontoCartesiano {
+
+	private int cX; // coordenada
+	private int cY;
+	
+	
+	
+}

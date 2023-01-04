@@ -1,0 +1,13 @@
+package lambdas;
+
+import java.util.function.Predicate;
+
+public class P3Predicado {
+
+	public static void main(String[] args) {
+		
+		Predicate<P3Produto> 
+		
+	}
+	
+}

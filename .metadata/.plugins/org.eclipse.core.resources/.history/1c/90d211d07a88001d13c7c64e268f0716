@@ -1,0 +1,9 @@
+package youtube.ze_codes_projetos.mercado.utils;
+
+public class Utils {
+
+	static String valor() {
+		
+	}
+	
+}

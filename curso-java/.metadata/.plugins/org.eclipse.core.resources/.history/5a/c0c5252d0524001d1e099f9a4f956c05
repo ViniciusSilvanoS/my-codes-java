@@ -1,0 +1,12 @@
+package fundamentos;
+
+public class Temperatura {
+
+	public static void main(String[] args) {
+		// (ºF - 32) x 5/9 = ºC
+		int f;
+		System.out.println("Digite o falor fahrenheit a ser convertido em graus: ");
+//		System.
+	}
+	
+}

@@ -1,0 +1,19 @@
+package oo.composicao_teste2.meu.desafio;
+
+import java.util.List;
+
+public class Compra {
+
+	private List<Item> itens;
+	
+
+	void addItem(int qtd, Produto produto) {
+		
+	}
+	
+	void addItem(String nome, double preco, int qtd) {
+		this.itens.add(item);
+	}
+	
+
+}

@@ -1,0 +1,109 @@
+package youtube.gustavo_guanabara.poo05;
+
+public class Banco {
+	
+	String numConta;
+	protected String tipo; // cc conta corrente / cp conta polpança
+	private String dono;
+	private double saldo;
+	private boolean status;
+	
+	
+	
+	public Banco(String numConta, String tipo, String dono) {
+		super();
+		this.numConta = numConta;
+		this.tipo = tipo;
+		this.dono = dono;
+		this.saldo = 0;
+		this.status = false;
+	}
+	
+	
+	// conta corrente já ganha 50 reais na conta
+	// polpansa ganha 150 reais
+	// para fechar conta deve ser esvaziada a conta e não pode estar em débito
+	// para depositar a conta tem que estar aberta
+	// para sacar a conta tem que estar aberta e ter saldo
+	
+	// nao deixar sacar um valor maior que a conta
+	// mensalidade todo mes. CC 12 reais / CP 20 reais
+	
+	void abrirConta(String tipo){
+		if(this.status == false) {
+			this.status = true;
+			if(tipo.equals("cc")) {
+				this.saldo = 50;
+			}else {
+				this.saldo = 150;
+			}
+		}else {
+			System.out.println("Conta já foi aberta!");
+		}
+	}
+	
+	void fecharConta(){
+		if(this.saldo == 0) {
+			this.status = false;
+		}else {
+			System.out.println("Não é possível fechar a conta. \nSeu status é de R$" + this.saldo + " na conta");
+		}
+	}
+	
+	depositar();
+	sacar();
+	pagarMensal();
+	
+	public String getNumConta() {
+		return numConta;
+	}
+
+
+	public void setNumConta(String numConta) {
+		this.numConta = numConta;
+	}
+
+
+	public String getTipo() {
+		return tipo;
+	}
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+
+	public String getDono() {
+		return dono;
+	}
+
+
+	public void setDono(String dono) {
+		this.dono = dono;
+	}
+
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+
+
+	public boolean isStatus() {
+		return status;
+	}
+
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+
+
+	
+}

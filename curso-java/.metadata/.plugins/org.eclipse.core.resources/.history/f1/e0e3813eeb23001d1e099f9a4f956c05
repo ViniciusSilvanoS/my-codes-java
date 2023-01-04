@@ -1,0 +1,16 @@
+package fundamentos;
+
+public class AreaCircunferencia {
+
+	public static void main(String[] args) {
+		double raio = 5;
+		double pi = 3.14;
+		int circunferencia = 10;
+		double area = Math.pow(raio, 2) * pi;
+		
+		
+		System.out.println("Área do circulo = " + area);
+		
+	}
+	
+}

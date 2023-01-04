@@ -1,0 +1,13 @@
+package youtube.Loiane_Groner.POO_Relacionamento_entre_classes;
+
+public class Endereco {
+	
+	private String nomeRua;
+	private String numero;
+	private String complemento;
+	private String cep;
+	private String cidade;
+	private String estado;
+	
+	
+}

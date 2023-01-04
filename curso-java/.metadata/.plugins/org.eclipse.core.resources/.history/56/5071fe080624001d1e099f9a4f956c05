@@ -1,0 +1,19 @@
+package fundamentos;
+
+import java.util.Scanner;
+
+public class Temperatura {
+
+	public static void main(String[] args) {
+		// (ºF - 32) x 5/9 = ºC
+		double f = 0.0;
+		double c;
+		
+		f = sc.nextDouble();
+		//Scanner f = new Scanner (System.in);
+		//c = (f - 32)*5/9;
+		System.out.println("Digite o falor fahrenheit a ser convertido em graus: ");
+//		System.
+	}
+	
+}

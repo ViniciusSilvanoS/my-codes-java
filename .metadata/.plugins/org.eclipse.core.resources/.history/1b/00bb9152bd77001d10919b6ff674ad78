@@ -1,0 +1,10 @@
+package youtube.gustavo_guanabara.poo05;
+
+public class Banco {
+	
+	private String numConta;
+	private String tipo;
+	private String dono;
+	private double saldo;
+	
+}

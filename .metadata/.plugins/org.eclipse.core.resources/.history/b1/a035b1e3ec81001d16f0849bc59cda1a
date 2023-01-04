@@ -1,0 +1,22 @@
+package exercicios.lista2.Eiii8;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
+public class Sistema {
+	
+	
+	
+	public static void main(String[] args) {
+		
+		HashSet <Empresa> empresas = new HashSet();
+//		List<Empresa> empresas = new ArrayList<>();
+		
+		empresas.add(new Empresa("Zaffari"));
+		
+		
+	}
+	
+	
+}

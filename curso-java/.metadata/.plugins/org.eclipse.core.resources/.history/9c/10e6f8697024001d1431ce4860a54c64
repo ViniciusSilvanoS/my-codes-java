@@ -1,0 +1,41 @@
+package fundamentos;
+
+public class TiposPrimitivos {
+
+	public static void main(String[] args) {
+		
+		// Tipos numéricos inteiros									Abaixo estão os limites de cada tipo numérico
+		byte anosDeEmpresa = 23; 									//Limite de -128 e +127
+		short numeroDeVoos = 542; 									//Limite de -32768 e +32767
+		int id = 56789;												//Limite de -32 e +127
+		long pontosAcumulados = 3_134_845_223L;						//Limite -9223372036854775808L e 9223372036854775807L
+		
+		
+		// Tipos numéricos reais
+		float salario = 11_556.52F;
+		double vendasAcumuladas = 2_991_797_103.01;					
+		
+		// Tipo boleano (verdadeiro ou falso)
+		boolean estaDeFerias = false;
+		
+		// Tipo caractere
+		char status = 'A'; 											//Recebe um valor único
+		char statusu = '\u1000';									//Recebe um valor único pela tabela ascii
+		
+		
+		// Dias de empresa
+		System.out.println(anosDeEmpresa * 365);
+		
+		// Número de viagens
+		System.out.println(numeroDeVoos / 2);
+		
+		// Pontos por real
+		System.out.println(vendasAcumuladas / pontosAcumulados);
+		
+		System.out.println(id + ": recebe " + salario + " reais.");
+		System.out.println("Está de férias? " + estaDeFerias);
+		System.out.println("Status 1: " + status + " | Status 2: " + statusu);
+	}
+	
+	
+}

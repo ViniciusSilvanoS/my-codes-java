@@ -1,0 +1,29 @@
+package youtube.gustavo_guanabara.poo05;
+
+/* 
+ * O programa consiste em criar contas bancária, sendo ela polpança ou corrente
+ * O programa fará as validações para poder fechar conta, sacar dinheiro e etc..
+ * */
+
+public class Sistema {
+
+	public static void main(String[] args) {
+		
+		Banco c1 = new Banco("123", "cc", "Roberto");
+		Banco c2 = new Banco("567", "cp", "Maria");
+		
+		c1.abrirConta();
+		System.out.println("Saldo: " + c1.getSaldo());
+		c1.abrirConta();
+		c1.depositar(300);
+		
+		
+		
+		
+		
+		
+//		c2.fecharConta();
+		
+	}
+	
+}

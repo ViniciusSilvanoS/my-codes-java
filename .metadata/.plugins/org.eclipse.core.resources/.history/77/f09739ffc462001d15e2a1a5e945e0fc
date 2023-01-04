@@ -1,0 +1,14 @@
+package exercicios.lista1;
+
+public class E5 {
+
+	public static void main(String[] args) {
+		
+		double valor = 1.9;
+		
+		int vlfinal = Math.floor(valor);
+		
+		System.out.println(vlfinal);
+	}
+	
+}

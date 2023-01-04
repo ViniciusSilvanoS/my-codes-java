@@ -1,0 +1,35 @@
+package oo.composicao_teste2.meu.desafio;
+
+import java.util.List;
+
+public class Cliente {
+
+	private String nome;
+	private List<Compra> compras;
+	
+	public Cliente() {
+		
+	}
+	
+	public Cliente(String nome, List<Compra> compras) {
+		super();
+		this.nome = nome;
+		this.compras = compras;
+	}
+	
+	//// ----------------------------
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public List<Compra> getCompras() {
+		return compras;
+	}
+	
+	
+	
+	
+}

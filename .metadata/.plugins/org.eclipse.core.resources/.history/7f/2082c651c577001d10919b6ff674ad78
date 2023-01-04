@@ -1,0 +1,9 @@
+package youtube.gustavo_guanabara.poo05;
+
+public class Pessoa {
+
+	private String nome;
+	private int idade;
+	private Banco conta;
+	
+}

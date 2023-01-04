@@ -1,0 +1,19 @@
+package oo.composicao.desafio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Compra {
+	
+	Cliente cliente;
+	List<Item> itens = new ArrayList<>();
+	
+	void adicionarItem(Produto p, int qtde) {
+		this.itens.add(new Item(p, qtde));
+	}
+	
+	Compra(Item item){
+		this.itens.add(item);
+	}
+	
+}

@@ -1,0 +1,27 @@
+package youtube.gustavo_guanabara.poo05;
+
+public class Banco {
+	
+	String numConta;
+	private String tipo; // cc conta corrente / cp conta polpança
+	private String dono;
+	private double saldo;
+	private boolean status = false;
+	
+	// conta corrente já ganha 50 reais na conta
+	// polpansa ganha 150 reais
+	// para fechar conta deve ser esvaziada a conta e não pode estar em débito
+	// para depositar a conta tem que estar aberta
+	// para sacar a conta tem que estar aberta e ter saldo
+	
+	// nao deixar sacar um valor maior que a conta
+	// mensalidade todo mes. CC 12 reais / CP 20 reais
+	
+	
+	abrirConta();
+	fecharConta();
+	depositar();
+	sacar();
+	pagarMensal();
+	
+}

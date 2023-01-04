@@ -1,0 +1,16 @@
+package youtube.ze_codes_projetos.mercado_meu;
+
+import java.awt.Frame;
+
+import javax.swing.JOptionPane;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		
+//		JOptionPane.YES_NO_OPTION
+		 JOptionPane.showInternalMessageDialog(null, "information","information", JOptionPane.INFORMATION_MESSAGE);
+		 
+	}
+	
+}

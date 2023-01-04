@@ -1,0 +1,49 @@
+package oo.composicao_teste2.professor.muitos_pra_muitos;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Curso {
+
+	private String nome;
+	private final List<Aluno> alunos;
+	
+	
+	public Curso(String nome) {
+		super();
+		this.nome = nome;
+		this.alunos = new ArrayList<>();
+	}
+
+	// -------------------
+	
+//	void 
+	
+	/* Obs.: Fiz addAluno e addAlunoComposicao para não criar um loop. 
+	 * Já que na aula o professor não colocar os arrays como privado e insere diretamente*/
+	void addAluno(Aluno aluno) {
+		alunos.add(aluno);
+		aluno.addCursoComposicao(this);
+	}
+	
+	void addAlunoComposicao(Aluno aluno) {
+		alunos.add(aluno);
+	}
+	
+	// -------------------
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+	
+	
+	
+}

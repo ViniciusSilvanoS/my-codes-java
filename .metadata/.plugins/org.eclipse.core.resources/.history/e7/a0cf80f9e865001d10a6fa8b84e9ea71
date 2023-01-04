@@ -1,0 +1,25 @@
+package lambdas;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class P4Consumer {
+
+	public static void main(String[] args) {
+		
+		Consumer<P3Produto> imprimir = p -> System.out.println(p.nome);
+		
+		P3Produto p1 = new P3Produto("Caneta", 12.34, 0.9);
+		imprimir.accept(p1);
+		
+		List<P3Produto> p2 = Arrays.asList(p1);
+		List<P3Produto> p3 = Arrays.asList(p1);
+		List<P3Produto> p4 = Arrays.asList(p1);
+		List<P3Produto> p5 = Arrays.asList(p1);
+		
+		
+		
+	}
+	
+}
