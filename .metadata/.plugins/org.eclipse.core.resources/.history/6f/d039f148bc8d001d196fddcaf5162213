@@ -1,0 +1,8 @@
+package streams2.desafio_map;
+
+public class Teste {
+
+	int v = 6;
+	String str = v;
+	
+}

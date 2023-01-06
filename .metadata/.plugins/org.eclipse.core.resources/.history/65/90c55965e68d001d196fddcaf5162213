@@ -1,0 +1,11 @@
+package streams2;
+
+public class P5Filter {
+
+	public static void main(String[] args) {
+		
+		Aluno a1 = new Aluno("Ana", 7.8);
+		
+	}
+	
+}

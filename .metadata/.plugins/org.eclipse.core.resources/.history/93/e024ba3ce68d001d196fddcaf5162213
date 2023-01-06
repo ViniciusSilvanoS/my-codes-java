@@ -1,0 +1,8 @@
+package streams2;
+
+public class P5Aluno {
+
+	final String nome;
+	
+	
+}

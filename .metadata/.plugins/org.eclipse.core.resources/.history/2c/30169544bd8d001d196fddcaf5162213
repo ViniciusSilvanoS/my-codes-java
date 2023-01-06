@@ -1,0 +1,20 @@
+package streams2.desafio_map;
+
+import java.util.function.BinaryOperator;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		
+		int v = 6;
+		String str = Integer.toBinaryString(v);
+		
+		System.out.println("Conversão para binário: " + str);
+
+		v = Integer.parseInt(str);
+		System.out.println("Conversão para binário: " + str);
+	}
+	
+
+	
+}

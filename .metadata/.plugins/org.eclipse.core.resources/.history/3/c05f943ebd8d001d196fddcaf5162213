@@ -1,0 +1,16 @@
+package streams2.desafio_map;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		
+		int v = 6;
+		String str = Integer.toBinaryString(v);
+		
+		System.out.println("Conversão para binário: " + str);
+		
+	}
+	
+
+	
+}
