@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import youtube.ze_codes_projetos.agencia_meu.excecoes.StringNulaException;
+import youtube.ze_codes_projetos.agencia_meu.excecoes.StringVaziaException;
 import youtube.ze_codes_projetos.agencia_meu.utilities.Utils;
 
 public class AgenciaBancaria {
@@ -13,6 +15,22 @@ public class AgenciaBancaria {
 	public static void main(String[] args) {
 		
 		contasBancarias = new ArrayList<>();
+		
+		// Para testes -------------------------------------------------
+		Pessoa pessoa = new Pessoa("Gui", "123", "gui@gmail.com");
+		Conta conta = new Conta(pessoa);
+		
+		Pessoa pessoa2 = new Pessoa("Bia", "456", "bia@gmail.com");
+		Conta conta2 = new Conta(pessoa2);
+		
+		Pessoa pessoa3 = new Pessoa("Duda", "789", "duda@gmail.com");
+		Conta conta3 = new Conta(pessoa2);
+		
+		contasBancarias.add(conta);
+		contasBancarias.add(conta2);
+		contasBancarias.add(conta3);
+		//// ----------------------------------------------------
+		
 		operacoes();
 		
 	}
@@ -71,13 +89,16 @@ public class AgenciaBancaria {
 	public static void criarConta() {
 		
 		try {
-			String nome = Utils.paneInserirString("Nome: ");			
+			String nome = Utils.paneInserirString("Nome: ");	
+			Validar.stringVazio(nome, "nome");
+			
 			String cpf = Utils.paneInserirString("CPF: ");
+			Validar.stringVazio(cpf, "CPF");
+						
 			String email = Utils.paneInserirString("Email: ");
+			Validar.stringVazio(email, "email");
 			
 			Pessoa pessoa = new Pessoa(nome, cpf, email);
-			
-			Validar.pessoa(pessoa);
 			
 			Conta conta = new Conta(pessoa);
 			
@@ -85,8 +106,12 @@ public class AgenciaBancaria {
 			
 			Utils.paneEscrever("Conta criada com sucesso!");
 			operacoes();
-		} catch (Exception e) {
+		} catch (StringVaziaException e) {
 			Utils.paneEscrever("Valor inválido!");
+			e.printStackTrace();
+			operacoes();
+		} catch (StringNulaException e) {
+			Utils.paneEscrever("Operação cancelada!");
 			e.printStackTrace();
 			operacoes();
 		}
@@ -113,32 +138,48 @@ public class AgenciaBancaria {
 	
 	public static void depositar() {
 		
-		int num = Utils.paneInserirInt("Digite o numero da conta que deseja depositar: ");
-		
-		Conta conta = encontrarConta(num);
-		
-		if(conta != null) {
+		try {
+			int num = Utils.paneInserirInt("Digite o numero da conta que deseja depositar: ");
 			
-			double valor = 0;
-			do {
-				
-				valor = Utils.paneInserirDouble("Digite o valor a depositar: \nSaldo atual: " + Utils.doubleToStringMoeda(conta.getSaldo()) +
-													"\n\nOu 0 para voltar ao menu.");
-				if(valor > 0) {
-					conta.depositar(valor);
-				}else if(valor == 0) {
-					operacoes();
-				}else {
-					Utils.paneEscrever("Valor inválido!!!");					
-				}
-				
-			}while(valor <= 0);
+			Conta conta = encontrarConta(num);
 			
-		}else {
-			Utils.paneEscrever("Conta inexistente!");
+			if(conta != null) {
+				
+				double deposito = 0;
+				do {
+					
+					deposito = Utils.paneInserirDouble("Digite o valor a depositar: \nSaldo atual: " + Utils.doubleToStringMoeda(conta.getSaldo()) +
+														"\n\nOu 0 para voltar ao menu.");
+					Validar.stringVazio(Double.toString(deposito), "deposito");
+					
+					if(deposito > 0) {
+						conta.depositar(deposito);
+					}else if(deposito == 0) {
+						operacoes();
+					}else {
+						Utils.paneEscrever("Valor inválido!!!");					
+					}
+					
+				}while(deposito <= 0);
+				
+			}else {
+				Utils.paneEscrever("Conta inexistente!");
+			}
+			
+			operacoes();
+		} catch (StringVaziaException e) {
+			Utils.paneEscrever("Valor inválido!");
+			e.printStackTrace();
+			operacoes();
+		} catch (StringNulaException | NullPointerException e) {
+			Utils.paneEscrever("Operação cancelada!");
+			e.printStackTrace();
+			operacoes();
+		} catch (NumberFormatException e) {
+			Utils.paneEscrever("O valor digitado deve ser um número!");
+			e.printStackTrace();
+			operacoes();
 		}
-		
-		operacoes();
 		
 	}
 	

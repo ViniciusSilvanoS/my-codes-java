@@ -3,6 +3,8 @@ package youtube.ze_codes_projetos.agencia_meu.excecoes;
 @SuppressWarnings("serial")
 public class StringVaziaException extends RuntimeException {
 
+	// Valida se a informação inserida está vazia. Ou seja não foi digitado nada e foi dado OK
+	
 	private String nomeDoAtributo;
 
 	
