@@ -10,6 +10,18 @@ public class P5Aluno {
 		this.nome = nome;
 		this.nota = nota;
 	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public double getNota() {
+		return nota;
+	}
+	
+	
 	
 	
 	

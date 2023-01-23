@@ -1,9 +1,0 @@
-package streams2.desafio_map;
-
-import java.util.function.Function;
-
-public class P4Utils {
-
-	public final static Function<Integer, String> toBinary = v -> Integer.toBinaryString(v);
-	
-}

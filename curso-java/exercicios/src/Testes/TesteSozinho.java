@@ -1,17 +1,23 @@
 package Testes;
 
-//import java.text.DecimalFormat;
+import java.util.Scanner;
+
 import javax.swing.JOptionPane;
-//import lambdas.P2Foreach;
 
 public class TesteSozinho {
 
 	public static void main(String[] args) {
+
 		
-		String nome = "Vinicius";
-		char letra = nome.charAt(0);
+		Scanner scanner = new Scanner(System.in);
+
+		String valor;
 		
-		System.out.println("letra: " + letra);
+		valor = JOptionPane.showInputDialog("Digite");
+		
+		System.out.println("Valor: " + valor.length());
+		
+		
 		
 	}
 
