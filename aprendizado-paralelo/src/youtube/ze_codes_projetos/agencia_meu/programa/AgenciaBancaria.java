@@ -12,7 +12,7 @@ public class AgenciaBancaria {
 
 	static ArrayList<Conta> contasBancarias;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		contasBancarias = new ArrayList<>();
 		
@@ -24,7 +24,7 @@ public class AgenciaBancaria {
 		Conta conta2 = new Conta(pessoa2);
 		
 		Pessoa pessoa3 = new Pessoa("Duda", "789", "duda@gmail.com");
-		Conta conta3 = new Conta(pessoa2);
+		Conta conta3 = new Conta(pessoa3);
 		
 		contasBancarias.add(conta);
 		contasBancarias.add(conta2);
@@ -39,7 +39,8 @@ public class AgenciaBancaria {
 	public static void operacoes() {
 
 		try {
-			int operacao = Utils.paneInserirInt("--- Selecione uma operação ---" + 
+			// Não usei a classe Utils, como nos outros casos, para captar o null e perguntar se usuário deseja sair
+			String operacao = JOptionPane.showInputDialog("--- Selecione uma operação ---" + 
 							"\nOpção 1 - Criar conta" + 
 							"\nOpção 2 - Depositar" + 
 							"\nOpção 3 - Sacar" + 
@@ -48,73 +49,92 @@ public class AgenciaBancaria {
 							"\nOpção 6 - Listar" + 
 							"\nOpção 0 - Sair");
 
-			
-			switch (operacao) {
-			case 1:
-				criarConta();
-				break;
-			case 2:
-				depositar();
-				break;
-			case 3:
-				sacar();
-				break;
-			case 4:
-				transferir();
-				break;
-			case 5:
-				editarOuExcluir();
-				break;
-			case 6:
-				listar();
-				break;
-			case 0:
-				Utils.paneEscrever("Até a próxima :)");
-				System.exit(0);
-				break;
-			default:
-				Utils.paneEscrever("Opção inválida!");
-				operacoes();
+			if(operacao != null) {
+				
+				switch (operacao) {
+				case "1":
+					criarConta();
+					break;
+				case "2":
+					depositar();
+					break;
+				case "3":
+					sacar();
+					break;
+				case "4":
+					transferir();
+					break;
+				case "5":
+					editarOuExcluir();
+					break;
+				case "6":
+					listar();
+					break;
+				case "0":
+					Utils.paneEscrever("Até a próxima :)");
+					System.exit(0);
+					break;
+				default:
+					Utils.paneEscrever("Opção inválida!");
+					operacoes();
+				}
+				
+			}else {
+				
+				String [] regra = {"Sim", "Não"};
+				int escolha = JOptionPane.showOptionDialog(null, "Você deseja sair do sistema?", 
+									"Opções", 0, JOptionPane.WARNING_MESSAGE, null, regra, "Não");
+				
+				if(escolha == 0) {
+					Utils.paneEscrever("Saindo!\n\nAté a próxima :)");
+					System.exit(0);
+				}else {
+					operacoes();
+				}
+				
 			}
-		} catch (NumberFormatException e) {
-			Utils.paneEscrever("Digite um valor válido!");
-			System.out.println(e.getMessage());
+			
+			
+		} catch (StringVaziaException e) {
+			Utils.paneEscrever("Valor inválido!");
 			e.printStackTrace();
 			operacoes();
+		} catch (StringNulaException | NullPointerException e) {
+			Utils.paneEscrever("Operação cancelada!");
+			e.printStackTrace();
+			operacoes();
+		} catch (NumberFormatException e) {
+			Utils.paneEscrever("O valor digitado deve ser um número!");
+			e.printStackTrace();
+			operacoes();
+		} catch (Exception e) {
+			Utils.paneEscrever("Ocorreu um erro!");
+			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 		
 	}
 	
 	
-	public static void criarConta() {
+	public static void criarConta() throws RuntimeException {
 		
-		try {
-			String nome = Utils.paneInserirString("Nome: ");	
-			Validar.stringVazio(nome, "nome");
-			
-			String cpf = Utils.paneInserirString("CPF: ");
-			Validar.stringVazio(cpf, "CPF");
-						
-			String email = Utils.paneInserirString("Email: ");
-			Validar.stringVazio(email, "email");
-			
-			Pessoa pessoa = new Pessoa(nome, cpf, email);
-			
-			Conta conta = new Conta(pessoa);
-			
-			contasBancarias.add(conta);
-			
-			Utils.paneEscrever("Conta criada com sucesso!");
-			operacoes();
-		} catch (StringVaziaException e) {
-			Utils.paneEscrever("Valor inválido!");
-			e.printStackTrace();
-			operacoes();
-		} catch (StringNulaException e) {
-			Utils.paneEscrever("Operação cancelada!");
-			e.printStackTrace();
-			operacoes();
-		}
+		String nome = Utils.paneInserirString("Nome: ");	
+		Validar.stringVazio(nome, "nome");
+		
+		String cpf = Utils.paneInserirString("CPF: ");
+		Validar.stringVazio(cpf, "CPF");
+					
+		String email = Utils.paneInserirString("Email: ");
+		Validar.stringVazio(email, "email");
+		
+		Pessoa pessoa = new Pessoa(nome, cpf, email);
+		
+		Conta conta = new Conta(pessoa);
+		
+		contasBancarias.add(conta);
+		
+		Utils.paneEscrever("Conta criada com sucesso!");
+		operacoes();
 		
 	}
 	
@@ -136,55 +156,41 @@ public class AgenciaBancaria {
 	}
 	
 	
-	public static void depositar() {
+	public static void depositar() throws RuntimeException {
 		
-		try {
-			int num = Utils.paneInserirInt("Digite o numero da conta que deseja depositar: ");
+		int num = Utils.paneInserirInt("Digite o numero da conta que deseja depositar: ");
+		
+		Conta conta = encontrarConta(num);
+		
+		if(conta != null) {
 			
-			Conta conta = encontrarConta(num);
-			
-			if(conta != null) {
+			double deposito = 0;
+			do {
 				
-				double deposito = 0;
-				do {
-					
-					deposito = Utils.paneInserirDouble("Digite o valor a depositar: \nSaldo atual: " + Utils.doubleToStringMoeda(conta.getSaldo()) +
-														"\n\nOu 0 para voltar ao menu.");
-					Validar.stringVazio(Double.toString(deposito), "deposito");
-					
-					if(deposito > 0) {
-						conta.depositar(deposito);
-					}else if(deposito == 0) {
-						operacoes();
-					}else {
-						Utils.paneEscrever("Valor inválido!!!");					
-					}
-					
-				}while(deposito <= 0);
+				deposito = Utils.paneInserirDouble("Digite o valor a depositar: \nSaldo atual: " + Utils.doubleToStringMoeda(conta.getSaldo()) +
+													"\n\nOu 0 para voltar ao menu.");
+//					Validar.stringVazio(Double.toString(deposito), "deposito");
 				
-			}else {
-				Utils.paneEscrever("Conta inexistente!");
-			}
+				if(deposito > 0) {
+					conta.depositar(deposito);
+				}else if(deposito == 0) {
+					operacoes();
+				}else {
+					Utils.paneEscrever("Valor inválido!!!");					
+				}
+				
+			}while(deposito <= 0);
 			
-			operacoes();
-		} catch (StringVaziaException e) {
-			Utils.paneEscrever("Valor inválido!");
-			e.printStackTrace();
-			operacoes();
-		} catch (StringNulaException | NullPointerException e) {
-			Utils.paneEscrever("Operação cancelada!");
-			e.printStackTrace();
-			operacoes();
-		} catch (NumberFormatException e) {
-			Utils.paneEscrever("O valor digitado deve ser um número!");
-			e.printStackTrace();
-			operacoes();
+		}else {
+			Utils.paneEscrever("Conta inexistente!");
 		}
+		
+		operacoes();
 		
 	}
 	
 	
-	public static void sacar() {
+	public static void sacar() throws RuntimeException {
 		
 		int num = Utils.paneInserirInt("Digite o numero da sua conta: ");
 		
@@ -216,7 +222,7 @@ public class AgenciaBancaria {
 	}
 	
 	
-	public static void transferir() {
+	public static void transferir() throws RuntimeException {
 		
 		int num1 = Utils.paneInserirInt("Digite o numero da sua conta: ");
 		
@@ -261,7 +267,7 @@ public class AgenciaBancaria {
 	}
 	
 	
-	public static void editarOuExcluir() {
+	public static void editarOuExcluir() throws RuntimeException {
 		
 		Conta conta;
 		int numeroConta;
@@ -411,7 +417,7 @@ public class AgenciaBancaria {
 	}
 	
 	
-	public static void listar() {
+	public static void listar() throws RuntimeException {
 		
 		if(contasBancarias.size() > 0) {
 			

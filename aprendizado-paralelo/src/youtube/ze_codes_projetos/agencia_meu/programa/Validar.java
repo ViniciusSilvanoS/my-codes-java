@@ -11,7 +11,6 @@ public class Validar {
 			throw new IllegalArgumentException("O aluno está nulo!");
 		}
 		
-		//// ----------------------------------------------------
 		
 		if(pessoa.getNome() == null) {
 			throw new StringVaziaException("nome");
@@ -21,7 +20,6 @@ public class Validar {
 			throw new StringNulaException("nome");
 		}
 		
-		//// ----------------------------------------------------
 		
 		if(pessoa.getCpf() == null) {
 			throw new StringVaziaException("CPF");
@@ -31,7 +29,6 @@ public class Validar {
 			throw new StringVaziaException("CPF");
 		}
 		
-		//// ----------------------------------------------------
 		
 		if(pessoa.getEmail() == null) {
 			throw new StringVaziaException("email");
@@ -55,5 +52,7 @@ public class Validar {
 		
 	}
 	
+	
+
 	
 }

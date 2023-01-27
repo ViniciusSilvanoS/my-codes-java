@@ -1,8 +1,6 @@
 package youtube.ze_codes_projetos.agencia_meu.programa;
 
 public class Pessoa {
-
-	static private int counter = 1;
 	
 	private String nome;
 	private String cpf;
@@ -13,7 +11,6 @@ public class Pessoa {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.email = email;
-		counter += 1;
 	}
 	
 	//// ----------------------------------------------------

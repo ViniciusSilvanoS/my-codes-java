@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
+	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="1"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-18"/>
 	<item key="org.eclipse.jdt.ui.last.selected.create.moduleinfo" value="false"/>
 	<item key="org.eclipse.jdt.ui.lastextjar" value="F:\Vinicius Silvano\Dowloads\apache-cxf-3.5.4\lib"/>
+	<item key="org.eclipse.jdt.ui.last.selected.project.jre" value="jdk-17.0.4.1"/>
 	<section name="completion_proposal_size">
 		<item key="contextSelector.size.x" value="331"/>
 		<item key="contextSelector.size.y" value="221"/>
@@ -92,8 +93,8 @@
 		<item key="RemoveFinal" value="false"/>
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
-		<item key="DIALOG_X_ORIGIN" value="425"/>
-		<item key="DIALOG_Y_ORIGIN" value="8"/>
+		<item key="DIALOG_X_ORIGIN" value="675"/>
+		<item key="DIALOG_Y_ORIGIN" value="92"/>
 		<item key="DIALOG_WIDTH" value="526"/>
 		<item key="DIALOG_HEIGHT" value="696"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
@@ -164,5 +165,8 @@
 		<item key="DIALOG_WIDTH" value="546"/>
 		<item key="DIALOG_HEIGHT" value="554"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item key="index" value="4"/>
 	</section>
 </section>
