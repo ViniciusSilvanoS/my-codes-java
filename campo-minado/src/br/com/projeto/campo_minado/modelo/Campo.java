@@ -136,7 +136,7 @@ public class Campo {
 		}else if(aberto && minasNaVizinhanca() > 0) {
 			return Long.toString(minasNaVizinhanca());
 		}else if(aberto) {
-			return " ";
+			return ".";
 		}else {
 			return "?";
 		}

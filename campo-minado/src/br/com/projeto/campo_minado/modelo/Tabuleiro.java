@@ -13,7 +13,7 @@ public class Tabuleiro {
 	private int colunas;
 	private int minas;
 	
-	private final List<Campo> campos = new ArrayList<>();
+	final List<Campo> campos = new ArrayList<>();
 
 	public Tabuleiro(int linhas, int colunas, int minas) {
 		this.linhas = linhas;
@@ -31,7 +31,7 @@ public class Tabuleiro {
 			campos.parallelStream()
 				.filter(c -> c.getLinha() == linha && c.getColuna() == coluna)
 				.findFirst()
-				.ifPresent(c -> c.abrir());;
+				.ifPresent(c -> c.abrir());
 		} catch (ExplosaoException e) {
 			campos.forEach(c -> c.setAberto(true));
 			throw e;
@@ -98,28 +98,43 @@ public class Tabuleiro {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("  ");
+		sb.append(" ");
+		for(int i = 0; i < ((colunas * 3) + 1); i++) {
+			sb.append("_");
+		}
+		
+		sb.append("\n|  ");
 		for(int c = 0; c < colunas; c++) {
 			sb.append(" ");
 			sb.append(c);
-			sb.append(" ");
+			
+			if(c != colunas - 1) {
+				sb.append(" ");				
+			}
 		}
 		
-		sb.append("\n");
+		sb.append("|\n");
 		
 		int i = 0;
 		for(int l = 0; l < linhas; l++) {
-			sb.append(l);
+			sb.append("|" + l);
 			sb.append(" ");
 			for(int c = 0; c < colunas; c++) {
 				
 				sb.append(" ");
 				sb.append(campos.get(i));
-				sb.append(" ");
+				if(c != colunas - 1) {
+					sb.append(" ");	
+				}				
 				i++;	
 				
 			}
-			sb.append("\n");
+			sb.append("|\n");
+		}
+		
+		sb.append(" ");
+		for(int k = 0; k < ((colunas * 3) + 1); k++) {
+			sb.append("─");
 		}
 		
 		return sb.toString();
