@@ -15,22 +15,30 @@ class TabuleiroTeste {
 	
 	@Test
 	void testeAbrirCamposSemExplosao() {
-		int linhas = 6;
-		int colunas = 6;
+
+		tabuleiro = new Tabuleiro(6, 6, 1);
 		
-		tabuleiro = new Tabuleiro(linhas, colunas, 1);
+		tabuleiro.campos.stream()
+			.filter(c -> c.isMinado())
+			.forEach(c -> c.alternarMarcacao());
 		
-		tabuleiro.abrir(0, 0);
-		tabuleiro.campos.stream().filter(c -> c.isFechado() && c.vizinhancaSegura()).forEach(c -> c.alternarMarcacao());
+		tabuleiro.campos.stream()
+			.filter(c -> !c.isMinado() && c.isFechado() && !c.isMarcado())
+			.forEach(c -> c.abrir());
 		
-		assertTrue(tabuleiro.objetivoAlcancado());
+		assertTrue(tabuleiro.objetivoAlcancado());			
+			
+	}
+	
+	@Test
+	void testeAbrirCamposComExplosao() {
 		
-//		for(int i = 0; i < linhas; i++) {
-//			for(int j = 0; j < colunas; j++) {
-//				assertAll(tabuleiro.abrir(i, j));
-//				assertNo
-//			}
-//		}
+		tabuleiro = new Tabuleiro(6, 6, 1);
+				
+		tabuleiro.campos.stream()
+		.filter(c -> c.isMinado())
+		.map(c -> c.abrir());
+		
 		
 		
 	}

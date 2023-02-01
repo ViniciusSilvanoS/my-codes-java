@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class Filter {
+public class Streams {
 
 	public static void main(String[] args) {
 		
@@ -53,12 +53,17 @@ public class Filter {
 		// Group
 		Map<Genero, List<Pessoa>> grupoPorGenero = pessoas.stream()
 			.collect(Collectors.groupingBy(Pessoa::getGenero));
-		grupoPorGenero.forEach((genero, pessoa1) -> {
-			System.out.println(genero);
-			pessoa1.forEach(System.out::println);
-			System.out.println();
-		});
+//		grupoPorGenero.forEach((genero, pessoa1) -> {
+//			System.out.println(genero);
+//			pessoa1.forEach(System.out::println);
+//			System.out.println();
+//		});
 		
+		Optional<String> mulherMaisVelha = pessoas.stream()
+			.filter(pessoa -> pessoa.getGenero().equals(Genero.MULHER))
+			.max(Comparator.comparing(Pessoa::getIdade))
+			.map(Pessoa::getNome);
+		mulherMaisVelha.ifPresent(System.out::println);
 	}
 	
 	private static List<Pessoa> getPessoa(){

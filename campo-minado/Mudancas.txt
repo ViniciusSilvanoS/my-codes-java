@@ -1,1 +1,10 @@
 campos era private - coloquei como package
+
+(Campo) vizinhancaSegura era padrao - coloquei public
+(Campo) alterarMarcacao || - ||
+(Campo) abrir || - ||
+
+
+ANOTAÇÃO
+AbrirComExplosao
+AbrirAPartirDaLinhaColuna
