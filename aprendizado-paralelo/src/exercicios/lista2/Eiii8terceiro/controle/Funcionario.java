@@ -8,4 +8,6 @@ public class Funcionario {
 	private Double salario;
 	private Date dataAdmicao;
 	
+	
+	
 }
