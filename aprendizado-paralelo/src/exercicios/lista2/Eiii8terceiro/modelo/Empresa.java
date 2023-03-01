@@ -17,7 +17,7 @@ public class Empresa {
 	private Map<Long, Funcionario> funcionariosQueSairamDaEmpresa = new HashMap<>();
 	
 	private long countDepartamento = 1;
-	private long countIdFuncionario = 1; // PRECISA ARRUMAR, VINCULAR O ID A EMPRESA, E O DEP TER ID DE ACORDO COM A EMPRESA ********************
+	private long countIdFuncionario = 1;
 	
 	private String nome;
 	private final String CNPJ;
@@ -47,7 +47,7 @@ public class Empresa {
 		
 	}
 	
-	public Funcionario procurarFuncionario(String cpf) { // ************ ajustar a procurar por ID. Para o ID da empresa e não o geral
+	public Funcionario procurarFuncionario(String cpf) {
 		
 		return funcionariosTotalEmpresa.values().parallelStream()
 					.filter(e -> e.getCpf().equals(cpf))
@@ -56,7 +56,7 @@ public class Empresa {
 		
 	}
 	
-	public Funcionario procurarFuncionario(Long id) { // ************ ajustar a procurar por ID. Para o ID da empresa e não o geral
+	public Funcionario procurarFuncionario(Long id) {
 		
 		return funcionariosTotalEmpresa.entrySet()
 					.parallelStream()
@@ -67,7 +67,7 @@ public class Empresa {
 		
 	}
 	
-	public Funcionario procurarFuncionarioSemDep(Long id) { // ************ ajustar a procurar por ID. Para o ID da empresa e não o geral
+	public Funcionario procurarFuncionarioSemDep(Long id) {
 		
 		return funcionariosSemDep.entrySet()
 				.parallelStream()
@@ -89,7 +89,7 @@ public class Empresa {
 		
 	}
 	
-	public Departamento procurarDepartamento(int referencia) {
+	public Departamento procurarDepartamento(Long referencia) {
 		
 		return departamentos.parallelStream()
 			.filter(e -> e.getReferencia() == referencia)
@@ -136,34 +136,7 @@ public class Empresa {
 		funcionariosTotalEmpresa.remove(id);
 		
 	}
-
-//	public void adicionarFuncionarioAoDepartamento(Funcionario funcionario, int referencia) {
-//			
-//		Departamento departamento;
-//		departamento = procurarDepartamento(referencia);
-//		
-//		boolean funcionarioNaoRepetido = false;
-//		if(departamento != null && departamento.getFuncionarios().size() != 0) {
-//			
-//			funcionarioNaoRepetido = departamento.getFuncionarios().parallelStream()
-//					.noneMatch(e -> e == funcionario);
-//			
-//			if(funcionarioNaoRepetido) {
-//				departamento.inserirFuncionarioDep(funcionario);
-//				Utils.escrever("Funcionário inserido com sucesso!");
-//			}else {
-//				Utils.escrever("Funcionário já está no departamento!");
-//			}
-//			
-//		}else if(departamento == null) {
-//			Utils.escrever("Departamento não existe!");			
-//		}else {
-//			// Adicionar o funcionário sem verificar repetidos
-//			departamento.inserirFuncionarioDep(funcionario);
-//			Utils.escrever("Funcionário inserido com sucesso!");
-//		}
-//		
-//	}
+	
 	
 	public void ajustarTodosSalarios() {
 		
@@ -212,7 +185,8 @@ public class Empresa {
 		StringBuilder sb = new StringBuilder();
 		
 		for(Map.Entry<Long, Funcionario> f : funcionariosTotalEmpresa.entrySet()) {
-			sb.append("Id: " + f.getKey() + " | Nome: " + f.getValue().getNome() + " | Departamento: " + f.getValue().getDepartamento() + "\n");
+			String departamento = f.getValue().getDepartamento() != null ? f.getValue().getDepartamento().getNome() : "Sem Dep.";
+			sb.append("Id: " + f.getKey() + " | Nome: " + f.getValue().getNome() + " | Departamento: " + departamento + "\n");
 		}
 		
 		return sb;
@@ -239,7 +213,32 @@ public class Empresa {
 		StringBuilder sb = new StringBuilder();
 		
 		for(Map.Entry<Long, Funcionario> f : funcionariosSemDep.entrySet()) {
-			sb.append("Id: " + f.getKey() + " | Nome: " + f.getValue().getNome() + " | Departamento: " + f.getValue().getDepartamento() + "\n");
+			String departamento = f.getValue().getDepartamento() != null ? f.getValue().getDepartamento().getNome() : "Sem Dep.";
+			sb.append("Id: " + f.getKey() + " | Nome: " + f.getValue().getNome() + " | Departamento: " + departamento + "\n");
+		}
+		
+		return sb;
+		
+	}
+	
+	public StringBuilder listarFuncionariosSimplesComDep() {
+		
+		Map<Long, Funcionario> funcionariosComDep = new HashMap<>();
+		
+		funcionariosTotalEmpresa.entrySet()
+			.stream()
+			.filter(e -> !funcionariosSemDep.containsValue(e.getValue()))
+			.forEach(e -> funcionariosComDep.put(e.getKey(), e.getValue()));
+		
+		StringBuilder sb = new StringBuilder();
+		
+		if(!funcionariosComDep.isEmpty()) {
+			
+			for(Map.Entry<Long, Funcionario> f : funcionariosComDep.entrySet()) {
+				String departamento = f.getValue().getDepartamento() != null ? f.getValue().getDepartamento().getNome() : "Sem Dep.";
+				sb.append("Id: " + f.getKey() + " | Nome: " + f.getValue().getNome() + " | Departamento: " + departamento + "\n");
+			}
+			
 		}
 		
 		return sb;

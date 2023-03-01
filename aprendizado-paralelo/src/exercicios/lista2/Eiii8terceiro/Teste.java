@@ -26,20 +26,24 @@ public class Teste {
 //		
 //		System.out.println("Tem? " + valor);
 		
-		Map<Integer, Empresa> empresas = new HashMap<>();
+//		Map<Integer, Empresa> empresas = new HashMap<>();
+//		
+//		Empresa e1 = new Empresa("Primeiro Teste", "111");
+//		Empresa e2 = new Empresa("Segundo Teste", "222");
+//		
+//		empresas.put(1, e1);
+//		empresas.put(2, e2);
+//		
+//		String cnpj = "121";
+//		
+//		boolean valor = empresas.values().stream()
+//				.anyMatch(e -> e.getCNPJ() == cnpj);
+//		
+//		System.out.println(valor);
+
+		StringBuilder sb = new StringBuilder();
 		
-		Empresa e1 = new Empresa("Primeiro Teste", "111");
-		Empresa e2 = new Empresa("Segundo Teste", "222");
-		
-		empresas.put(1, e1);
-		empresas.put(2, e2);
-		
-		String cnpj = "121";
-		
-		boolean valor = empresas.values().stream()
-				.anyMatch(e -> e.getCNPJ() == cnpj);
-		
-		System.out.println(valor);
+		System.out.println(sb.isEmpty());
 		
 	}
 	

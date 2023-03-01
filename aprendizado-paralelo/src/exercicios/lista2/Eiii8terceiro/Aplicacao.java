@@ -126,19 +126,13 @@ public class Aplicacao {
 		String nome = Utils.inserirString("Nome da empresa: ");
 		String cnpj = Utils.inserirString("Qual o CNPJ: ");
 		
-		if(cnpj.length() == 14) {
+		if(!isCnpjCadastrado(cnpj)) {
+			Empresa empresa = new Empresa(nome, cnpj);
+			empresas.add(empresa);
 			
-			if(!isCnpjCadastrado(cnpj)) {
-				Empresa empresa = new Empresa(nome, cnpj);
-				empresas.add(empresa);
-				
-				Utils.escrever("Empresa cadastrada com sucesso!");
-			}else {
-				Utils.escrever("CNPJ já foi cadastrado!");
-			}
-			
+			Utils.escrever("Empresa cadastrada com sucesso!");
 		}else {
-			Utils.escrever(cnpj + " é inválido!");
+			Utils.escrever("CNPJ já foi cadastrado!");
 		}
 		
 		operacoesGeral();
@@ -220,9 +214,9 @@ public class Aplicacao {
 	public static void operacoesEmpresa(Empresa empresa) {
 				
 		String escolha = Utils.inserirString("1 - Listar funcionários\n2 - Cadastrar funcionário\n3 - Inserir funcionário ao departamento"
-				+ "\n4 - Excluir funcionário\n\n5 - Transferir funcionário de departamento\n6 - Listar funcionário por departamento"
-				+ "\n\n7 - Listar departamentos\n8 - Cadastrar departamento"
-				+ "\n9 - Aumentar salário do departamento\n0 - Voltar ao menu");
+				+ "\n4 - Excluir funcionário\n5 - Transferir funcionário de departamento"
+				+ "\n6 - Listar departamentos\n7 - Cadastrar departamento"
+				+ "\n0 - Voltar ao menu");
 		
 		switch (escolha) {
 		case "1":
@@ -238,19 +232,13 @@ public class Aplicacao {
 			excluirFuncionario(empresa);
 			break;
 		case "5":
-//			transferirFuncionarioDep(empresa);
+			transferirFuncionarioDep(empresa);
 			break;
 		case "6":
-//			listarFuncionarioPorDep(empresa);
-			break;
-		case "7":
 			listarDepartamentos(empresa);
 			break;
-		case "8":
+		case "7":
 			cadastrarDepartamento(empresa);
-			break;
-		case "9":
-//			aumentarSalarioDep(); // Tirar esse funcionalidade e excluir metodos previamente criados para fazer isso (Dentro dos objetos)
 			break;
 		case "0":
 			operacoesEscolha();
@@ -306,7 +294,11 @@ public class Aplicacao {
 		StringBuilder sb = new StringBuilder();
 		
 		sb = empresa.listarFuncionariosCompletoTodos();
-		Utils.escrever(sb.toString());
+		if(!sb.isEmpty()) {
+			Utils.escrever(sb.toString());
+		}else {
+			Utils.escrever("Nenhum funcionário cadastrado!");
+		}
 		
 		operacoesEmpresa(empresa);
 		
@@ -318,10 +310,7 @@ public class Aplicacao {
 		
 		String nomeDep = Utils.inserirString("Digite o nome do departamento");
 		
-		Departamento departamento = new Departamento(nomeDep, empresa);
-		
-		//// ----------------------------------------------------
-		
+		Departamento departamento = new Departamento(nomeDep, empresa);		
 			
 		if(!empresa.isDepartamentoCadastrado(departamento)) {
 			
@@ -332,9 +321,6 @@ public class Aplicacao {
 		}else {
 			Utils.escrever("Este departamento já foi cadastrado!");
 		}
-			
-		
-		//// ----------------------------------------------------
 		
 		operacoesEmpresa(empresa);
 		
@@ -368,7 +354,7 @@ public class Aplicacao {
 			
 			if(funcionario.getDepartamento() == null) {
 
-				int idDep = Utils.inserirInt("Digite o ID do departamento: \n\n" + empresa.listarDepartamentos().toString());
+				Long idDep = Utils.inserirLong("Digite o ID do departamento: \n\n" + empresa.listarDepartamentos().toString());
 				
 				Departamento departamento;
 				departamento = empresa.procurarDepartamento(idDep);
@@ -407,6 +393,7 @@ public class Aplicacao {
 		
 	}
 	
+	
 	public static void inserirFuncionarioDep(Empresa empresa, Long idFuncionario){ // Inserir Dep durante cadastro de funcionário
 		
 		if(empresa.quantidadeDeDep() == 0) {
@@ -420,7 +407,7 @@ public class Aplicacao {
 			
 			if(funcionario.getDepartamento() == null) {
 
-				int idDep = Utils.inserirInt("Digite o ID do departamento: \n\n" + empresa.listarDepartamentos().toString());
+				Long idDep = Utils.inserirLong("Digite o ID do departamento: \n\n" + empresa.listarDepartamentos().toString());
 				
 				Departamento departamento;
 				departamento = empresa.procurarDepartamento(idDep);
@@ -494,37 +481,39 @@ public class Aplicacao {
 	}
 	
 	
-//	public void adicionarFuncionarioAoDepartamento(Funcionario funcionario, int referencia) {
-//		
-//		Departamento departamento;
-//		departamento = procurarDepartamento(referencia);
-//		
-//		boolean funcionarioNaoRepetido = false;
-//		if(departamento != null && departamento.getFuncionarios().size() != 0) {
-//			
-//			funcionarioNaoRepetido = departamento.getFuncionarios().parallelStream()
-//					.noneMatch(e -> e == funcionario);
-//			
-//			if(funcionarioNaoRepetido) {
-//				departamento.inserirFuncionarioDep(funcionario);
-//				Utils.escrever("Funcionário inserido com sucesso!");
-//			}else {
-//				Utils.escrever("Funcionário já está no departamento!");
-//			}
-//			
-//		}else if(departamento == null) {
-//			Utils.escrever("Departamento não existe!");			
-//		}else {
-//			// Adicionar o funcionário sem verificar repetidos
-//			departamento.inserirFuncionarioDep(funcionario);
-//			Utils.escrever("Funcionário inserido com sucesso!");
-//		}
-//		
-//	}
-	
 	public static void transferirFuncionarioDep(Empresa empresa){
 		
+		// funcionario desejado
+		Long id = Utils.inserirLong("Digite o id do funcionário: \n" + empresa.listarFuncionariosSimplesComDep());
+		Funcionario funcionario = empresa.procurarFuncionario(id);
 		
+		if(funcionario != null) {
+			
+			// informar id dep e listar dep's na hora para escolher id
+			Long idDep = Utils.inserirLong("Digite o ID do departamento: \n\n" + empresa.listarDepartamentos().toString());
+			Departamento departamento = empresa.procurarDepartamento(idDep);
+			if(departamento != null) {
+				
+				if(funcionario.getDepartamento() != departamento) {
+					
+					// alterar dep do objeto funcionario
+					funcionario.setDepartamento(departamento);
+					
+					Utils.escrever("Funcionário transferido com sucesso!");
+					
+				}else {
+					Utils.escrever("Funcionário já faz parte deste departamento!");
+				}
+				
+			}else {
+				Utils.escrever("Departamento não encontrado!");
+			}
+			
+		}else {
+			Utils.escrever("Funcionario não existe!");
+		}
+
+		operacoesEmpresa(empresa);
 		
 	}
 	
