@@ -9,7 +9,6 @@ public class Fila {
 		
 		// Fila
 		Queue<String> fila = new LinkedList<String>();
-		
 	}
 	
 }

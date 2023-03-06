@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.function.BiFunction"/>
-    <fullyQualifiedTypeName name="java.util.function.BinaryOperator"/>
-    <fullyQualifiedTypeName name="java.lang.Comparable"/>
-    <fullyQualifiedTypeName name="java.text.NumberFormat"/>
-    <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
     <fullyQualifiedTypeName name="youtube.ze_codes_projetos.agencia_meu.utilities.Utils"/>
     <fullyQualifiedTypeName name="java.lang.Throwable"/>
     <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
@@ -60,4 +55,9 @@
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="exercicios.lista2.Eiii8terceiro.utils.Utils"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="generics.p1_sem_generics.CaixaObjeto"/>
+    <fullyQualifiedTypeName name="generics.p2_com_generics.Caixa"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="youtube.robotec.heranca.Professor"/>
+    <fullyQualifiedTypeName name="youtube.robotec.heranca.Pessoa"/>
 </qualifiedTypeNameHistroy>
