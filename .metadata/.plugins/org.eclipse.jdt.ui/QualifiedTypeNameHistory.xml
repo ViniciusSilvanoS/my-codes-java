@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="youtube.ze_codes_projetos.agencia_meu.utilities.Utils"/>
-    <fullyQualifiedTypeName name="java.lang.Throwable"/>
-    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
-    <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
-    <fullyQualifiedTypeName name="youtube.ze_codes_projetos.agencia_meu.excecoes.StringVaziaException"/>
-    <fullyQualifiedTypeName name="youtube.ze_codes_projetos.agencia_meu.excecoes.StringNulaException"/>
-    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
-    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
-    <fullyQualifiedTypeName name="youtube.ze_codes_projetos.agencia_meu.programa.Validar"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
-    <fullyQualifiedTypeName name="br.com.cod3r.cm.excecao.ExplosaoException"/>
-    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.Tabuleiro"/>
-    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.visao.TabuleiroConsole"/>
     <fullyQualifiedTypeName name="java.lang.Runtime"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="br.com.projeto.campo_minado.excecao.SairException"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.function.Predicate"/>
@@ -46,11 +30,8 @@
     <fullyQualifiedTypeName name="exercicios.lista2.Eiii8terceiro.modelo.Empresa"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="exercicios.lista2.Eiii8terceiro.Aplicacao"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="exercicios.lista2.Eiii8terceiro.utils.Utils"/>
@@ -60,4 +41,23 @@
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="youtube.robotec.heranca.Professor"/>
     <fullyQualifiedTypeName name="youtube.robotec.heranca.Pessoa"/>
+    <fullyQualifiedTypeName name="padroes.observer.ObservadorChegadaAniversariante"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="padroes.observer.EventoChegadaAniversariante"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="padroes.observer.Namorada"/>
+    <fullyQualifiedTypeName name="padroes.observer.Porteiro"/>
+    <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="java.awt.event.FocusListener"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.function.BiConsumer"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.CampoEvento"/>
+    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.Tabuleiro"/>
+    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.CampoObservador"/>
+    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.Campo"/>
 </qualifiedTypeNameHistroy>

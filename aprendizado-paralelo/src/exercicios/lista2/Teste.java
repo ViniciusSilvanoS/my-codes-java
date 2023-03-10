@@ -22,7 +22,6 @@ public class Teste {
 //			
 //			System.out.println(sdf1.format(minhaDataEmDate));
 //		} catch (ParseException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 		

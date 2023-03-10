@@ -33,7 +33,6 @@ public class ASimpleDateFormat {
 			
 			System.out.println(sdf.format(minhaDataEmDate));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

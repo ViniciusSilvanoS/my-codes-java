@@ -24,21 +24,9 @@ public class Aplicacao {
 		empresas.add(e1);
 		empresas.add(e2);
 		
-//		empresas.get(1).adicionarDepartamento(null);
-		
 		Funcionario f1 = new Funcionario("Vinicius", 6500.00, "987", e1, "01/01/2023");
 		Funcionario f2 = new Funcionario("Mauricio", 3800.00, "654", e1, "10/09/2023");
 		Funcionario f3 = new Funcionario("Eliana", 8500.00, "321", e2, "05/03/2020");
-		
-//		Funcionario f1 = new Funcionario("NomeTeste1", 5000.00, "123", "22/12/1960");
-//		Funcionario f2 = new Funcionario("NomeTeste2", 4000.00, "123", "22/06/1962");
-//		
-//		System.out.println(f1.toString());
-//		System.out.println(f2.toString());
-//		
-//		System.out.println("---------------");
-//		
-//		Funcionario.listarFuncionariosSemDep();
 		
 		operacoesEscolha();
 	

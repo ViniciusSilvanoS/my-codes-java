@@ -36,7 +36,6 @@ public class P8Aluno {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return nome + " tem nota " + nota;
 	}
 	
