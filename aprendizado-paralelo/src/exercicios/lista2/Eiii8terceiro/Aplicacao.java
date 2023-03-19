@@ -28,38 +28,46 @@ public class Aplicacao {
 		Funcionario f2 = new Funcionario("Mauricio", 3800.00, "654", e1, "10/09/2023");
 		Funcionario f3 = new Funcionario("Eliana", 8500.00, "321", e2, "05/03/2020");
 		
-		operacoesEscolha();
+		try {
+			operacoesEscolha();
+		} catch (Exception e) {
+			System.out.println("Erro inesperado!");
+			e.printStackTrace();
+		}
 	
-		
 	}
 	
 	public static void operacoesEscolha() {
 		
-		String escolha = Utils.inserirString("Digite a senha de acesso: \n1 - Empresas\n2 - Tecnopuc\n0 - sair");
-		
-		switch(escolha) {
-			case "1":
-				
-				String cnpj = Utils.inserirString("CNPJ: ");
-				Empresa empresa = procurarEmpresa(cnpj);
-				
-				if(empresa != null) {
-					operacoesEmpresa(empresa);					
-				}else {
-					Utils.escrever("Empresa cnpj: " + cnpj + " não encontrado!");
+		try {
+			String escolha = Utils.inserirString("Digite a senha de acesso: \n1 - Empresas\n2 - Tecnopuc\n0 - sair");
+			
+			switch(escolha) {
+				case "1":
+					
+					String cnpj = Utils.inserirString("CNPJ: ");
+					Empresa empresa = procurarEmpresa(cnpj);
+					
+					if(empresa != null) {
+						operacoesEmpresa(empresa);					
+					}else {
+						Utils.escrever("Empresa cnpj: " + cnpj + " não encontrado!");
+						operacoesEscolha();
+					}
+					break;
+					
+				case "2":
+					operacoesGeral();
+					break;
+				case "0":
+					Utils.escrever("Saindo!!!");
+					System.exit(0);
+				default:
+					Utils.escrever("Opção inválida!");
 					operacoesEscolha();
-				}
-				break;
-				
-			case "2":
-				operacoesGeral();
-				break;
-			case "0":
-				Utils.escrever("Saindo!!!");
-				System.exit(0);
-			default:
-				Utils.escrever("Opção inválida!");
-				operacoesEscolha();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 		
 	}
@@ -70,26 +78,31 @@ public class Aplicacao {
 	
 	public static void operacoesGeral() {
 		
-		String escolha = Utils.inserirString("1 - Listar empresas\n2 - Cadastrar empresa\n3 - Excluir empresa\n0 - Voltar ao menu principal");
-		
-		switch (escolha) {
-		case "1": {
-			listarEmpresas();
-			break;
-		}
-		case "2": {
-			cadastrarEmpresa();
-			break;
-		}
-		case "3":
-			excluirEmpresa();
-			break;
-		case "0":
-			operacoesEscolha();
-			break;
-		default:
-			Utils.escrever("Valor digitado inválido!");
-			operacoesGeral();
+		try {
+			String escolha = Utils.inserirString("1 - Listar empresas\n2 - Cadastrar empresa\n3 - Excluir empresa\n0 - Voltar ao menu principal");
+			
+			switch (escolha) {
+			case "1": {
+				listarEmpresas();
+				break;
+			}
+			case "2": {
+				cadastrarEmpresa();
+				break;
+			}
+			case "3":
+				excluirEmpresa();
+				break;
+			case "0":
+				operacoesEscolha();
+				break;
+			default:
+				Utils.escrever("Valor digitado inválido!");
+				operacoesGeral();
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 	}

@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.Runtime"/>
-    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.excecao.SairException"/>
-    <fullyQualifiedTypeName name="java.util.Iterator"/>
-    <fullyQualifiedTypeName name="java.util.function.Predicate"/>
-    <fullyQualifiedTypeName name="streams2.amigoscode_youtube_stream.Genero"/>
-    <fullyQualifiedTypeName name="java.util.Comparator"/>
-    <fullyQualifiedTypeName name="java.util.Optional"/>
-    <fullyQualifiedTypeName name="meus_programas.nota_escolar.Genero"/>
-    <fullyQualifiedTypeName name="java.util.stream.Collector"/>
-    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
-    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.excecao.ExplosaoException"/>
     <fullyQualifiedTypeName name="javax.xml.crypto.Data"/>
     <fullyQualifiedTypeName name="youtube.Loiane_Groner.formatar_data.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
@@ -27,8 +15,6 @@
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="exercicios.lista2.Eiii8terceiro.controle.Funcionario"/>
     <fullyQualifiedTypeName name="youtube.ze_codes_projetos.mercado_meu.utils.Utils"/>
-    <fullyQualifiedTypeName name="exercicios.lista2.Eiii8terceiro.modelo.Empresa"/>
-    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
     <fullyQualifiedTypeName name="exercicios.lista2.Eiii8terceiro.Aplicacao"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
@@ -48,16 +34,30 @@
     <fullyQualifiedTypeName name="padroes.observer.Namorada"/>
     <fullyQualifiedTypeName name="padroes.observer.Porteiro"/>
     <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
-    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-    <fullyQualifiedTypeName name="javax.swing.JButton"/>
     <fullyQualifiedTypeName name="java.awt.FlowLayout"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
     <fullyQualifiedTypeName name="java.awt.event.FocusListener"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.function.BiConsumer"/>
+    <fullyQualifiedTypeName name="exercicios.lista2.Eiii8terceiro.modelo.Empresa"/>
+    <fullyQualifiedTypeName name="br.projeto.tecnopolo_sistema_gerencial.utils.Utils"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.CampoEvento"/>
+    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.ResultadoEvento"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
     <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.Tabuleiro"/>
-    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.CampoObservador"/>
+    <fullyQualifiedTypeName name="java.awt.GridLayout"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
     <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.Campo"/>
+    <fullyQualifiedTypeName name="java.util.function.Consumer"/>
+    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.visao.BotaoCampo"/>
+    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.CampoObservador"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="javax.swing.BorderFactory"/>
+    <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
+    <fullyQualifiedTypeName name="javax.swing.ImageIcon"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="br.com.projeto.campo_minado.modelo.CampoEvento"/>
+    <fullyQualifiedTypeName name="javax.swing.SwingUtilities"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="br.com.projeto.visao.Calculadora"/>
 </qualifiedTypeNameHistroy>
