@@ -6,6 +6,10 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\Estudos\TI\Estudos JAVA\curso-java"/>
+			<item value="F:\Estudos\TI\Estudos JAVA\aprendizado-paralelo"/>
+			<item value="F:\Estudos\TI\Estudos JAVA\curso-java\exercicios"/>
+			<item value="F:\Estudos\TI\Estudos JAVA\curso-java"/>
 			<item value="D:\TI\Estudos JAVA"/>
 			<item value="D:\Documentos\Estudo\java\Projetos\campo-minado"/>
 			<item value="D:\Documentos\Estudo\java\Projetos\carrinho-de-compras"/>
