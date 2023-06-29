@@ -1,23 +1,34 @@
 package jdbc;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class P3FabricaConexao {
 
 	public static Connection getConexao() {
 		
 		try {
-			final String url = "jdbc:mysql://localhost/curso_java?verifyServerCertification=false&useSSL=true";
-			final String usuario = "root";
-			final String senha = "12345";
+			Properties prop = getProperties();
+			final String url = prop.getProperty("banco.url");
+			final String usuario = prop.getProperty("banco.usuario");
+			final String senha = prop.getProperty("banco.senha");
 			
 			return DriverManager.getConnection(url, usuario, senha);
-		} catch (SQLException e) {
+		} catch (SQLException | IOException e) {
 			throw new RuntimeException(e);
 		}
 		
+	}
+	
+	private static Properties getProperties() throws IOException {
+		Properties prop = new Properties();
+		String caminho = "/conexao.properties";
+//		System.getProperties("user.home"); -> Usado para saber o diretório home independente do computador
+		prop.load(P3FabricaConexao.class.getResourceAsStream(caminho));
+		return prop;
 	}
 	
 }
