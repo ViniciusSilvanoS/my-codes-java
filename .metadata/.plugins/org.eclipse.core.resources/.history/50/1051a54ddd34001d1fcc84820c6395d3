@@ -1,7 +1,0 @@
-package classe;
-
-public class DesafioData {
-	
-	int dia, mes, ano;
-	int cont = 0;
-}

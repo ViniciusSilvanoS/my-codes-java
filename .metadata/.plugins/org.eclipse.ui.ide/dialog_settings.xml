@@ -6,25 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="E:\Estudos\TI\Estudos JAVA\curso-java"/>
-			<item value="F:\Estudos\TI\Estudos JAVA\aprendizado-paralelo"/>
-			<item value="F:\Estudos\TI\Estudos JAVA\curso-java\exercicios"/>
-			<item value="F:\Estudos\TI\Estudos JAVA\curso-java"/>
-			<item value="D:\TI\Estudos JAVA"/>
-			<item value="D:\Documentos\Estudo\java\Projetos\campo-minado"/>
-			<item value="D:\Documentos\Estudo\java\Projetos\carrinho-de-compras"/>
-			<item value="D:\TI\Teste Bluesoft\desafio-automacao-de-testes"/>
-			<item value="D:\TI\Estudos JAVA\livro-head-first-java"/>
-			<item value="D:\TI\Estudos JAVA\trabalhos-do-tecnico"/>
-			<item value="D:\TI\Estudos JAVA\curso-java"/>
+			<item value="E:\Estudos\TI\Estudos JAVA"/>
 		</list>
-	</section>
-	<section name="NewWizardAction">
-	</section>
-	<section name="CleanDialogSettings">
-		<item key="TOGGLE_SELECTED" value="true"/>
-		<item key="DIALOG_WIDTH" value="500"/>
-		<item key="DIALOG_HEIGHT" value="389"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

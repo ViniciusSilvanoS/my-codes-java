@@ -1,9 +1,0 @@
-package youtube.Loiane_Groner.POO_Relacionamento_entre_classes;
-
-public class Telefone {
-
-	private String tipo;
-	private String ddd;
-	private String numero;
-	
-}
