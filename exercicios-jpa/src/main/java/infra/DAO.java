@@ -29,6 +29,7 @@ public class DAO<E> {
 	
 	public DAO(Class<E> classe) {
 		em = emf.createEntityManager();
+		this.classe = classe;
 	}
 	
 	public DAO<E> abrirT(){
@@ -50,6 +51,10 @@ public class DAO<E> {
 		return this.abrirT().incluir(entidade).fecharT();
 	}	
 	
+	public E obterPorID(Object id) {
+		return em.find(classe, id);
+	}
+	
 	public List<E> obterTodos(){
 		return this.obterTodos(10, 0);
 	}
@@ -61,7 +66,7 @@ public class DAO<E> {
 		
 		String jpql = "SELECT e FROM " + classe.getName() + " e";
 		TypedQuery<E> query = em.createQuery(jpql, classe);
-		query.setMaxResults(deslocamento);
+		query.setMaxResults(qtde);
 		query.setFirstResult(deslocamento);
 		return query.getResultList();
 	}

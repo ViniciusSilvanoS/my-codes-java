@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="modelo.basico.Usuario"/>
-    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
-    <fullyQualifiedTypeName name="javax.persistence.Id"/>
-    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
-    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
-    <fullyQualifiedTypeName name="javax.persistence.Table"/>
     <fullyQualifiedTypeName name="javax.persistence.Column"/>
     <fullyQualifiedTypeName name="modelo.basico.Entidade"/>
     <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
     <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
     <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.lang.UnsupportedOperationException"/>
     <fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
-    <fullyQualifiedTypeName name="infra.DAO"/>
+    <fullyQualifiedTypeName name="infra.ProdutoDAO"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="modelo.basico.Produto"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+    <fullyQualifiedTypeName name="infra.DAO"/>
+    <fullyQualifiedTypeName name="modelo.umpraum.Cliente"/>
+    <fullyQualifiedTypeName name="modelo.umpraum.Assento"/>
 </qualifiedTypeNameHistroy>

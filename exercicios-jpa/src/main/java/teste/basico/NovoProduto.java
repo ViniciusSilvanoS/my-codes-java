@@ -7,7 +7,7 @@ public class NovoProduto {
 
 	public static void main(String[] args) {
 		
-		Produto produto = new Produto("Monitor 23", 789.98);
+		Produto produto = new Produto("Notebook", 4391.32);
 		
 		DAO<Produto> dao = new DAO<>(Produto.class);
 		dao.incluirAtomico(produto).fechar();
