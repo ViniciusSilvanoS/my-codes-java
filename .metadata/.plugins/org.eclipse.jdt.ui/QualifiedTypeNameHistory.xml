@@ -43,4 +43,7 @@
     <fullyQualifiedTypeName name="infra.DAO"/>
     <fullyQualifiedTypeName name="modelo.heranca.Aluno"/>
     <fullyQualifiedTypeName name="modelo.heranca.AlunoBolsista"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="br.com.cod3r.app.calculo.interno.OperacoesAritimeticas"/>
+    <fullyQualifiedTypeName name="br.com.cod3r.app.calculo.Calculadora"/>
 </qualifiedTypeNameHistroy>
