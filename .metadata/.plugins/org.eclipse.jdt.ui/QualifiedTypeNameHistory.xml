@@ -11,7 +11,6 @@
     <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
     <fullyQualifiedTypeName name="modelo.umpraum.Cliente"/>
     <fullyQualifiedTypeName name="modelo.umpraum.Assento"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="javax.persistence.Column"/>
     <fullyQualifiedTypeName name="modelo.basico.Produto"/>
@@ -26,7 +25,6 @@
     <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="modelo.muitospramuitos.Ator"/>
     <fullyQualifiedTypeName name="modelo.muitospramuitos.Filme"/>
     <fullyQualifiedTypeName name="modelo.consulta.NotaFilme"/>
@@ -44,6 +42,16 @@
     <fullyQualifiedTypeName name="modelo.heranca.Aluno"/>
     <fullyQualifiedTypeName name="modelo.heranca.AlunoBolsista"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="br.com.cod3r.app.logging.Logger"/>
+    <fullyQualifiedTypeName name="java.lang.Class"/>
     <fullyQualifiedTypeName name="br.com.cod3r.app.calculo.interno.OperacoesAritimeticas"/>
     <fullyQualifiedTypeName name="br.com.cod3r.app.calculo.Calculadora"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Field"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="br.com.cod3r.app.financeiro.SuperHeroi"/>
+    <fullyQualifiedTypeName name="br.com.cod3r.app.calculo.CalculadoraImpl"/>
+    <fullyQualifiedTypeName name="java.util.ServiceLoader"/>
+    <fullyQualifiedTypeName name="br.com.cod3r.app.Calculadora"/>
 </qualifiedTypeNameHistroy>
